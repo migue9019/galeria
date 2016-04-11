@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expoartes</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar-default navbar-fixed-top responsive: true do">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" id= "logo" href="/"></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="#">COMPRAR</a></li>
+        <li><a href="#">ARTISTAS</a></li>
+        <li><a href="#">COLECCIONES</a></li>
+        <li><a href="#">TEMATICAS</a></li>
+        <li><a href="#">PRECIOS</a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Buscar en expoarte">
+        </div>
+        <button type="submit" class="btn btn-default">Buscar</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">VENDER EN EXPOARTES</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">INFORMACIÓN<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "SOBRE NOSOTROS", new_user_session_path %></li>
+            <li><%= link_to "TERMINOS Y CONDICIONES", new_user_session_path %></li>
+            <li><%= link_to "PREGUNTAS FRECUENTES", new_user_session_path %></li>
+            <li><%= link_to "CONTACTANOS", new_user_session_path %></li>
+          </ul>
+        </li>
+        <% if user_signed_in? %> 
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %><span class="caret"></span></a>
+          <ul class="dropdown-menu">  
+            <li><%= link_to "MI PERFIL", edit_user_registration_path %></li>
+            <li><%= link_to "MI GALERIA", new_user_session_path  %></li>
+            <li><%= link_to "MIS ORDENES", new_user_session_path %></li>
+            <li><%= link_to "AJUSTES", new_user_session_path %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to 'SALIR', destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>      
+        <% else %>
+            <li><%= link_to "INGRESAR", new_user_session_path %></li>
+            <li><%= link_to "REGISTRARME", new_user_registration_path%></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+<%= yield %>
+</div>
+</body>
+</html>

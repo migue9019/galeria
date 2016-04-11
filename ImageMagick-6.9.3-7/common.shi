@@ -1,0 +1,21 @@
+# Test environment
+top_srcdir='/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7'
+top_builddir='/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7'
+
+set -a
+COMPARE="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/utilities/compare"
+COMPOSITE="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/utilities/composite"
+CONJURE="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/utilities/conjure"
+CONVERT="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/utilities/convert"
+DISPLAY="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/utilities/display"
+IDENTIFY="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/utilities/identify"
+MONTAGE="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/utilities/montage" 
+VALIDATE="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/tests/validate"
+DRAWTEST="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/tests/drawtest"
+WANDTEST="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/tests/wandtest"
+LD_LIBRARY_PATH="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/magick/.libs:${LD_LIBRARY_PATH}"
+MAGICK_CODER_MODULE_PATH="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/coders"
+MAGICK_CONFIGURE_PATH="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/config:/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/config"
+MAGICK_FILTER_MODULE_PATH="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/filters"
+PATH="/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/utilities:/home/maris/Escritorio/expoartes/ImageMagick-6.9.3-7/tests:${PATH}"
+set +a

@@ -1,0 +1,59 @@
+<div class="row">
+  <%= form_for(@picture) do |f| %>
+    <% if @picture.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+
+        <ul>
+        <% @picture.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :Guardar_imagen %><br>
+      <%= f.file_field :avatar %>
+    </div>
+    <div class="field">
+      <%= f.label :titulo %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :descripcion %><br>
+      <%= f.text_area :description %>
+    </div>
+    <div class="field">
+      <%= f.label :Tematica %><br>
+      <%= f.select :subject_id, Subject.all.collect{|a| [a.name, a.id]} %>
+    </div>
+    <div class="field">
+      <%= f.label :Estilo %><br>
+      <%= f.select :style_id, Style.all.collect{|b| [b.name, b.id]} %>
+    </div>
+    <div class="field">
+      <%= f.label :Tecnica %><br>
+      <%= f.select :technique_id, Technique.all.collect{|c| [c.name, c.id]} %>
+    </div>
+    <div class="field">
+      <%= f.label :Orientacion %><br>
+      <%= f.select :orientation_id, Orientation.all.collect{|d| [d.name, d.id]} %>
+    </div>
+    <div class="field">
+      <%= f.label :Tamaño %><br>
+      <%= f.select :size_id, Size.all.collect{|e| [e.name, e.id]} %>
+    </div>
+    <div class="field">
+      <%= f.label :Precio %><br>
+      <%= f.number_field :price %>
+    </div>
+    <div class="field">
+      <%= f.label :Palabras_claves %><br>
+      <%= f.text_field :tags %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Guardar obra" %>
+    </div>
+  <% end %>
+</div>

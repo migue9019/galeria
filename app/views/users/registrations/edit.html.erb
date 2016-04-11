@@ -1,0 +1,103 @@
+
+<div  class="row ">
+
+  <div class="col-md-5 col-md-offset-1 ">
+    <br>
+    <div class="panel panel-custom" >
+      <div class="panel-heading"><h2>Mi perfil</h2></div>
+      <div class="panel-body">
+      <br>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.label :Correo_electronico %><br>
+          <%=  @current_user.email %>
+        </div>
+        <br />
+        <div class="field">
+          <%= f.label :avatar, "Foto de perfil" %>
+
+          <div>
+            <%=image_tag(current_user.avatar)%>
+          </div>
+          <br>
+          <%= f.file_field :avatar%>
+        </div>
+        <br />
+        <div class="field">
+          <%= f.label :name, "Nombre" %>
+          <%= f.text_field :name, class: "form-control"%>
+        </div>
+        <br />
+        <div class="field">
+          <%= f.label :surname, "Apellidos" %>
+          <%= f.text_field :surname, class: "form-control" %>
+        </div>
+        <br />
+        <div class="field">
+          <%= f.label :username, "Nombre de usuario" %>
+          <%= f.text_field :username, class: "form-control" %>
+        </div>
+        <br />
+        <div class="field">
+          <%= f.label :birthdate, "Fecha de nacimiento" %>
+          <%= f.date_field :birthdate, class: "form-control" %>
+        </div>
+        <br />
+        <div class="field">
+          <%= f.label :address, "Direccion" %>
+          <%= f.text_field :address, class: "form-control" %>
+        </div>
+        <br />
+        <div class="field">
+          <%= f.label :phone, "Telefono" %>
+          <%= f.text_field :phone, class: "form-control" %>
+        </div>
+        <br />
+        <div class="field">
+          <%= f.label :presentation, "Presentacion" %>
+          <%= f.text_area :presentation, class: "form-control" %>
+        </div>
+        <br />
+        <div class="field">
+          <%= f.label :receive_email, "Recivir correos electronicos" %>
+          <%= f.check_box :receive_email %>
+        </div>
+        <br />
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password, autocomplete: "off" %>
+        </div>
+        <br>
+        <div class="actions">
+          <%= f.submit "Actualizar", class: "btn btn-custom" %>
+        </div>
+      <% end %>
+
+      <h3>Cancelar cuenta</h3>
+
+      <p>Insatisfecho? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "¿Estas seguro" }, method: :delete %></p>
+
+      <%= link_to "Volver", :back %>
+              </div>
+      </div>
+    </div>
+</div>
+
+

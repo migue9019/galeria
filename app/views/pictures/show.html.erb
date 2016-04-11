@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @picture.avatar %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @picture.title %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @picture.description %>
+</p>
+
+<p>
+  <strong>Tematica:</strong>
+  <%= @picture.subject.name %>
+</p>
+
+<p>
+  <strong>Estilo:</strong>
+  <%= @picture.style.name %>
+</p>
+
+<p>
+  <strong>Tecnica:</strong>
+  <%= @picture.technique.name %>
+</p>
+
+<p>
+  <strong>Orientación:</strong>
+  <%= @picture.orientation.name %>
+</p>
+
+<p>
+  <strong>Tamaño:</strong>
+  <%= @picture.size.name %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @picture.price %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @picture.tags %>
+</p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>

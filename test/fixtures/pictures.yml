@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  avatar: MyString
+  title: MyString
+  description: MyText
+  subject_id: 1
+  style_id: 1
+  technique_id: 1
+  orientation_id: 1
+  size_id: 1
+  price: 1
+  user_id: 1
+  tags: MyString
+
+two:
+  avatar: MyString
+  title: MyString
+  description: MyText
+  subject_id: 1
+  style_id: 1
+  technique_id: 1
+  orientation_id: 1
+  size_id: 1
+  price: 1
+  user_id: 1
+  tags: MyString

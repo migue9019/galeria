@@ -1,0 +1,42 @@
+<div id="formulario">
+  <div  class="row ">
+
+    <div class="col-md-2 col-md-offset-5 ">
+      <br>
+      <div class="panel panel-custom" >
+        <div class="panel-body">
+          <h2>Crear cuenta</h2>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="field">
+              <%= f.text_field :username, placeholder:"Nombre de usuario",autofocus: true %>
+            </div>
+            <br>
+            <div class="field">
+              <%= f.email_field :email, placeholder:"Correo electrónico",autofocus: true %>
+            </div>
+            <br>
+            <div class="field">
+              <%= f.password_field :password, placeholder:"Contraseña",autocomplete: "off" %>
+            </div>
+            <br>
+            
+            <div class="actions">
+              <%= f.submit "Registrame" , class: "btn btn-custom btn-block"%>
+            </div>
+            <br>
+            
+          <% end %>
+            <div>
+              <p><small>Al registrarme estoy aceptando los <a href="">términos y condiciones</a> de la plataforma.</small></p>
+            </div>
+            <div>
+              <p><strong>¿Ya tienes una cuenta?<%= render "users/shared/links" %></strong></p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+.navbar{
+	 background-color: #042045;	
+	 float: none;
+}
+
+.navbar-nav > li > a{
+	color: white;
+}
+
+body, html{
+	height: 100%;
+}
+
+#logo{
+	background: url(asset-path("logo.png")) no-repeat;
+    width: 80px;
+    height: 47px;
+    background-size: 80px;
+    margin: 1px auto;
+    display: block;
+    float: none;
+    padding: 0;
+}
+
+#formulario{
+  height: 100%;
+  text-align: center;
+  background: url(asset-path("pexels-photo.jpg")) no-repeat;
+  background-size: 100%;
+}
+
+.main-container{
+	padding-top: 50.5px;
+}
+
+body{
+	padding-top: 50px;
+}
+
+.panel-custom {
+    border-color: #042045;
+}
+
+.panel-custom > .panel-heading {
+    color: #fff;
+    background-color: #042045;
+    border-color: #042045;
+}
+
+.btn-custom {
+    color: #fff;
+    background-color: #042045;
+    border-color: #042045;
+}
+
+.banner{
+	background: url(asset-path("banner.jpg")) no-repeat;
+	height: 56%;
+	width: 100%;
+    background-size: cover;  
+}
+
+div div div img {
+	width: 100%;
+}
+
+
+.container-custom {
+	margin: auto;
+	width: 75%;
+}
